@@ -3,19 +3,35 @@
 // passo 2 = conferir se a palavra e so tem vogal  
 // passo 3 = fazer um for na lista passando o como parametro pra function 
 // passo 4 = imprimir de forma correta o resultado 
-
+// ex 3.1 criar uma function que verifica letra por letra e retorna se e vogal ou nao
 const testCase = [`acbd`,`aeou`,`ponte`]
 const vogais = [`a`,`e`,`i`,`o`,`u`]
-function eVogal (palavra,vogaisDeComparacao){
+function palavraEVogal (palavra){
     for (let i = 0; i < palavra.length; i++){
-        for (let j = 0 ; j < vogaisDeComparacao.length; j++){
-            if (palavra[i]!= vogaisDeComparacao[j]){
-                return false;
-            }
-            return true;
+        let vogal = letraEVogal(palavra[i])
+        if(!vogal){
+            return false
         }
     }
+    return true;
 }
-for (let i = 0 ; i < testCase.length; i++){
-    console.log(eVogal(testCase[i],vogais))
+function letraEVogal (letra){
+    let vogal = false
+    for (let j = 0 ; j < vogais.length; j++){
+        if (letra === vogais[j]){
+            vogal = true;   
+        }
+    }
+    return vogal
 }
+function confereLetra (letra){
+    let vog = letraEVogal(letra)
+    return vog.toString()
+}
+
+for(let i = 0; i< testCase.length; i++){
+    console.log(`Palavra : ${palavraEVogal(testCase[i])}`)
+    for(let j = 0; j < testCase[i].length; j++){
+        console.log(`Letra e vogal ? : ${confereLetra(testCase[i][j])}`)
+    }
+} 
