@@ -1,9 +1,6 @@
 /*
 computado percorra toda palavra e compare a letra as letras umas com as
- outras em ordem crecente e me retorne se a palavra e ordenada ou nao 
-
- 
-    
+ outras em ordem crecente e me retorne se a palavra e ordenada ou nao
  */
 const testCase = [`a`,`zaab`, `belo`, `fino`,`cruz`, `flor`,`batata` , `abracadabra`, `aaaabc`]
 
